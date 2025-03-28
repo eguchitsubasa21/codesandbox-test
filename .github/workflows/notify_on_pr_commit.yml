@@ -1,0 +1,19 @@
+name: Notify Slack on PR Commit
+
+on:
+  pull_request:
+    types: [synchronize]  # PRにコミットが追加されたとき
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send message to Slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "text": ":memo: *PRに新しいコミットが追加されました*\n*タイトル:* ${{ github.event.pull_request.title }}\n*URL:* ${{ github.event.pull_request.html_url }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
