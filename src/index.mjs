@@ -1,6 +1,7 @@
 import "./styles.css";
 
 console.log("ああああああああ")
+// 軽微な修正
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
