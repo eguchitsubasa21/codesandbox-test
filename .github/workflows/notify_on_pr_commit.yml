@@ -16,4 +16,4 @@ jobs:
               "text": ":memo: *PRに新しいコミットが追加されました*\n*タイトル:* ${{ github.event.pull_request.title }}\n*URL:* ${{ github.event.pull_request.html_url }}"
             }
         env:
-          SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/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"
+          SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/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"
