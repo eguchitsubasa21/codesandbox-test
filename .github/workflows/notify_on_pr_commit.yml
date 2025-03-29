@@ -1,4 +1,5 @@
 name: Notify Slack on PR Commit
+run: echo "Webhook: $SLACK_WEBHOOK_URL"
 
 on:
   pull_request:
