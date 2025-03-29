@@ -4,9 +4,6 @@ on:
   pull_request:
     types: [synchronize]  # PRにコミットが追加されたとき
 
-env:
-  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
 jobs:
   notify:
     runs-on: ubuntu-latest
@@ -18,4 +15,5 @@ jobs:
             {
               "text": ":memo: *PRに新しいコミットが追加されました*\n*タイトル:* ${{ github.event.pull_request.title }}\n*URL:* ${{ github.event.pull_request.html_url }}"
             }
-        
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
