@@ -1,5 +1,4 @@
 name: Notify Slack on PR Commit
-run: echo "Webhook: $SLACK_WEBHOOK_URL"
 
 on:
   pull_request:
@@ -10,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send message to Slack
+        run: echo "Webhook: $SLACK_WEBHOOK_URL"
         uses: slackapi/slack-github-action@v1.24.0
         with:
           payload: |
